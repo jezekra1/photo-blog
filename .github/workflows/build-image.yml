@@ -4,7 +4,9 @@
 # file that differs from upstream. Upstream has no .github/workflows, so
 # syncing never conflicts.
 #
-# Deploy stays manual: `make deploy-photo-blog` in provision-k8s.
+# Deploys happen in the cluster: a CronJob rolls out the newest commit's image
+# within 30 minutes of it appearing here (or `make deploy-photo-blog` in
+# provision-k8s).
 #
 # Setup (once):
 # - Actions secret PROVISION_K8S_DEPLOY_KEY: private half of a read-only deploy
